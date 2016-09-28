@@ -5,10 +5,22 @@ public class enemyMove : MonoBehaviour {
 
 	public GameObject enemy;
 
+	public GameObject player;
+	public GameObject playerClone;
+
+	private int playerX;
+	private int playerY;
+
+	private int playerCX;
+	private int playerCY;
+
 	private int randomMove;
 
 	// Use this for initialization
 	void Start () {
+
+		player = GameObject.Find("Player");
+		playerClone = GameObject.Find("PlayerClone");
 	
 	}
 	
@@ -20,7 +32,9 @@ public class enemyMove : MonoBehaviour {
 			transform.position.z);
 
 		if (Input.GetKeyDown (KeyCode.A) || Input.GetKeyDown (KeyCode.S) || Input.GetKeyDown (KeyCode.D) ||
-		   Input.GetKeyDown (KeyCode.W)) {
+			Input.GetKeyDown (KeyCode.W) || Input.GetKeyDown (KeyCode.LeftArrow) ||
+			Input.GetKeyDown (KeyCode.RightArrow) || Input.GetKeyDown (KeyCode.UpArrow) ||
+			Input.GetKeyDown (KeyCode.DownArrow)) {
 
 			randomMove = Random.Range (0, 4);
 
@@ -40,6 +54,22 @@ public class enemyMove : MonoBehaviour {
 				enemyMove.y -= 1;
 			}
 
+		}
+
+		playerX = (int) player.transform.position.x;
+		playerY = (int) player.transform.position.y;
+
+		playerCX = (int) playerClone.transform.position.x;
+		playerCY = (int) playerClone.transform.position.y;
+
+		if (enemyMove.x == playerX && enemyMove.y == playerY) {
+			//			Debug.Log ("Game Over");
+			Application.LoadLevel("GameOver");
+		}
+
+		if (enemyMove.x == playerCX && enemyMove.y == playerCY) {
+			//			Debug.Log ("Game Over");
+			Application.LoadLevel("GameOver");
 		}
 
 		enemy.transform.position = enemyMove;

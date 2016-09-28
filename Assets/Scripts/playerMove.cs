@@ -5,15 +5,6 @@ public class playerMove : MonoBehaviour {
 
 	public GameObject player;
 
-	public GameObject enemy1;
-	public GameObject enemy2;
-
-	private int enemy1X;
-	private int enemy1Y;
-
-	private int enemy2X;
-	private int enemy2Y;
-
 	// Use this for initialization
 	void Start () {
 	
@@ -30,7 +21,15 @@ public class playerMove : MonoBehaviour {
 			playerMove.x -= 1;
 		}
 
+		if(Input.GetKeyDown(KeyCode.LeftArrow) && playerMove.x > 0){
+			playerMove.x -= 1;
+		}
+
 		if(Input.GetKeyDown(KeyCode.D) && playerMove.x < 10){
+			playerMove.x += 1;
+		}
+
+		if(Input.GetKeyDown(KeyCode.RightArrow) && playerMove.x < 10){
 			playerMove.x += 1;
 		}
 
@@ -38,24 +37,16 @@ public class playerMove : MonoBehaviour {
 			playerMove.y += 1;
 		}
 
+		if(Input.GetKeyDown(KeyCode.UpArrow) && playerMove.y < 10){
+			playerMove.y += 1;
+		}
+
 		if(Input.GetKeyDown(KeyCode.S) && playerMove.y > 0){
 			playerMove.y -= 1;
 		}
 
-		enemy1X = (int) enemy1.transform.position.x;
-		enemy1Y = (int) enemy1.transform.position.y;
-
-		enemy2X = (int) enemy2.transform.position.x;
-		enemy2Y = (int) enemy2.transform.position.y;
-
-		if (playerMove.x == enemy1X && playerMove.y == enemy1Y) {
-//			Debug.Log ("Game Over");
-			Application.LoadLevel("GameOver");
-		}
-
-		if (playerMove.x == enemy2X && playerMove.y == enemy2Y) {
-//			Debug.Log ("Game Over");
-			Application.LoadLevel("GameOver");
+		if(Input.GetKeyDown(KeyCode.DownArrow) && playerMove.y > 0){
+			playerMove.y -= 1;
 		}
 
 		player.transform.position = playerMove;
