@@ -16,6 +16,12 @@ public class enemyMove : MonoBehaviour {
 
 	private int randomMove;
 
+	public bool enemyDidMove = true;
+
+	public bool enemyCommand = false;
+
+	private float enemyDelay = 0;
+
 	// Use this for initialization
 	void Start () {
 
@@ -31,29 +37,58 @@ public class enemyMove : MonoBehaviour {
 			transform.position.y,
 			transform.position.z);
 
-		if (Input.GetKeyDown (KeyCode.A) || Input.GetKeyDown (KeyCode.S) || Input.GetKeyDown (KeyCode.D) ||
-			Input.GetKeyDown (KeyCode.W) || Input.GetKeyDown (KeyCode.LeftArrow) ||
-			Input.GetKeyDown (KeyCode.RightArrow) || Input.GetKeyDown (KeyCode.UpArrow) ||
-			Input.GetKeyDown (KeyCode.DownArrow)) {
+		if (GameObject.Find ("Player").GetComponent<playerMove> ().playerDidMove) {
+
+			enemyDelay += Time.deltaTime;
 
 			randomMove = Random.Range (0, 4);
 
-			if (randomMove == 0 && enemyMove.x > 0) {
-				enemyMove.x -= 1;
-			}
+			if (enemyDelay >= 0.5f) {
 
-			if (randomMove == 1 && enemyMove.x < 10) {
-				enemyMove.x += 1;
-			}
+				if (randomMove == 0 && enemyMove.x > 0) {
+					enemyMove.x -= 1;
+					enemyDidMove = true;
+					playerMove playerMove = GameObject.Find ("Player").GetComponent<playerMove> ();
+					playerMove.playerDidMove = false;
 
-			if (randomMove == 2 && enemyMove.y < 10) {
-				enemyMove.y += 1;
-			}
+					enemyCommand = true;
+					
+					enemyDelay = 0f;
+				}
 
-			if (randomMove == 3 && enemyMove.y > 0) {
-				enemyMove.y -= 1;
-			}
+				if (randomMove == 1 && enemyMove.x < 10) {
+					enemyMove.x += 1;
+					enemyDidMove = true;
+					playerMove playerMove = GameObject.Find ("Player").GetComponent<playerMove> ();
+					playerMove.playerDidMove = false;
 
+					enemyCommand = true;
+
+					enemyDelay = 0f;
+				}
+
+				if (randomMove == 2 && enemyMove.y < 10) {
+					enemyMove.y += 1;
+					enemyDidMove = true;
+					playerMove playerMove = GameObject.Find ("Player").GetComponent<playerMove> ();
+					playerMove.playerDidMove = false;
+
+					enemyCommand = true;
+
+					enemyDelay = 0f;
+				}
+
+				if (randomMove == 3 && enemyMove.y > 0) {
+					enemyMove.y -= 1;
+					enemyDidMove = true;
+					playerMove playerMove = GameObject.Find ("Player").GetComponent<playerMove> ();
+					playerMove.playerDidMove = false;
+
+					enemyCommand = true;
+
+					enemyDelay = 0f;
+				}
+			}
 		}
 
 		playerX = (int) player.transform.position.x;

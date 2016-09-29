@@ -66,7 +66,7 @@ public class pelletMove : MonoBehaviour {
 
 		if (playerScore >= 600 && enemyWasSpawnedA == false) {
 
-			GameObject enemy2 = (GameObject)Instantiate (Resources.Load ("enemy"));
+			GameObject enemy2 = (GameObject)Instantiate (Resources.Load ("EnemyClone"));
 
 			Vector3 enemy2Move = new Vector3 (transform.position.x,
 				transform.position.y,
@@ -82,7 +82,7 @@ public class pelletMove : MonoBehaviour {
 
 		if (playerScore >= 1100 && enemyWasSpawnedB == false) {
 			
-			GameObject enemy3 = (GameObject)Instantiate (Resources.Load ("enemy"));
+			GameObject enemy3 = (GameObject)Instantiate (Resources.Load ("EnemyClone"));
 
 			Vector3 enemy3Move = new Vector3 (transform.position.x,
 				transform.position.y,
@@ -99,7 +99,7 @@ public class pelletMove : MonoBehaviour {
 
 		if (playerScore >= 1600 && enemyWasSpawnedC == false) {
 
-			GameObject enemy4 = (GameObject)Instantiate (Resources.Load ("enemy"));
+			GameObject enemy4 = (GameObject)Instantiate (Resources.Load ("EnemyClone"));
 
 			Vector3 enemy4Move = new Vector3 (transform.position.x,
 				transform.position.y,
@@ -116,7 +116,7 @@ public class pelletMove : MonoBehaviour {
 
 		if (playerScore >= 2100 && enemyWasSpawnedD == false) {
 
-			GameObject enemy5 = (GameObject)Instantiate (Resources.Load ("enemy"));
+			GameObject enemy5 = (GameObject)Instantiate (Resources.Load ("EnemyClone"));
 
 			Vector3 enemy5Move = new Vector3 (transform.position.x,
 				transform.position.y,
