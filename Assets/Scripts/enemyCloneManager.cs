@@ -11,10 +11,8 @@ public class enemyCloneManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (GameObject.Find ("Enemy").GetComponent<enemyMove> ().enemyCommand) {
-			enemyMove enemyMove = GameObject.Find ("Enemy").GetComponent<enemyMove>();
-			enemyMove.enemyCommand = false;
-		}
+		enemyMove enemyMove = GameObject.Find ("Enemy").GetComponent<enemyMove>();
+		enemyMove.enemyCommand = false;
 	
 	}
 }

@@ -98,7 +98,7 @@ public class pelletMove : MonoBehaviour {
 		}
 
 		if (playerScore >= 1600 && enemyWasSpawnedC == false) {
-
+			
 			GameObject enemy4 = (GameObject)Instantiate (Resources.Load ("EnemyClone"));
 
 			Vector3 enemy4Move = new Vector3 (transform.position.x,
@@ -134,8 +134,6 @@ public class pelletMove : MonoBehaviour {
 		PlayerPrefs.SetInt("Player Score", playerScore);
 
 		pellet.transform.position = pelletMove;
-
-//		Debug.Log (playerScore);
 	
 	}
 }

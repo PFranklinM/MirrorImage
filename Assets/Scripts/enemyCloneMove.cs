@@ -31,9 +31,9 @@ public class enemyCloneMove : MonoBehaviour {
 			                    transform.position.y,
 			                    transform.position.z);
 
-		randomMove = Random.Range (0, 4);
-
 		if (GameObject.Find ("Enemy").GetComponent<enemyMove> ().enemyCommand) {
+
+			randomMove = Random.Range (0, 4);
 
 			if (randomMove == 0 && enemyPos.x > 0) {
 				enemyPos.x -= 1;
