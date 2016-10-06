@@ -24,7 +24,7 @@ public class playerMove : MonoBehaviour {
 			playerClone.transform.position.y,
 			playerClone.transform.position.z);
 
-		if (GameObject.Find ("Enemy").GetComponent<enemyMove>().enemyDidMove) {
+//		if (GameObject.Find ("Enemy").GetComponent<enemyMove>().enemyDidMove) {
 
 			if (Input.GetKeyDown (KeyCode.A) && playerMove.x > 0) {
 				playerMove.x -= 1;
@@ -97,7 +97,7 @@ public class playerMove : MonoBehaviour {
 				enemyMove enemyMove = GameObject.Find ("Enemy").GetComponent<enemyMove>();
 				enemyMove.enemyDidMove = false;
 			}
-		}
+//		}
 
 		player.transform.position = playerMove;
 		playerClone.transform.position = playerCloneMove;

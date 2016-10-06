@@ -41,7 +41,9 @@ public class enemyMove : MonoBehaviour {
 
 			enemyDelay += Time.deltaTime;
 
-			randomMove = Random.Range (0, 4);
+//			randomMove = Random.Range (0, 4);
+
+			randomMove = Random.Range (0, 6);
 
 			if (enemyDelay >= 0.5f) {
 
@@ -80,6 +82,106 @@ public class enemyMove : MonoBehaviour {
 
 				if (randomMove == 3 && enemyMove.y > 0) {
 					enemyMove.y -= 1;
+					enemyDidMove = true;
+					playerMove playerMove = GameObject.Find ("Player").GetComponent<playerMove> ();
+					playerMove.playerDidMove = false;
+
+					enemyCommand = true;
+
+					enemyDelay = 0f;
+				}
+
+
+
+				//Enemy Seek 1
+
+				if (randomMove == 4 && player.transform.position.x > enemyMove.x) {
+					enemyMove.x += 1;
+					enemyDidMove = true;
+					playerMove playerMove = GameObject.Find ("Player").GetComponent<playerMove> ();
+					playerMove.playerDidMove = false;
+
+					enemyCommand = true;
+
+					enemyDelay = 0f;
+				}
+
+				if (randomMove == 4 && player.transform.position.x < enemyMove.x) {
+					enemyMove.x -= 1;
+					enemyDidMove = true;
+					playerMove playerMove = GameObject.Find ("Player").GetComponent<playerMove> ();
+					playerMove.playerDidMove = false;
+
+					enemyCommand = true;
+
+					enemyDelay = 0f;
+				}
+
+				if (randomMove == 4 && player.transform.position.x == enemyMove.x &&
+					player.transform.position.y > enemyMove.y) {
+					enemyMove.y += 1;
+					enemyDidMove = true;
+					playerMove playerMove = GameObject.Find ("Player").GetComponent<playerMove> ();
+					playerMove.playerDidMove = false;
+
+					enemyCommand = true;
+
+					enemyDelay = 0f;
+				}
+
+				if (randomMove == 4 && player.transform.position.x == enemyMove.x &&
+					player.transform.position.y < enemyMove.y) {
+					enemyMove.y -= 1;
+					enemyDidMove = true;
+					playerMove playerMove = GameObject.Find ("Player").GetComponent<playerMove> ();
+					playerMove.playerDidMove = false;
+
+					enemyCommand = true;
+
+					enemyDelay = 0f;
+				}
+
+
+
+				//Enemy Seek 2
+
+				if (randomMove == 5 && player.transform.position.y > enemyMove.y) {
+					enemyMove.y += 1;
+					enemyDidMove = true;
+					playerMove playerMove = GameObject.Find ("Player").GetComponent<playerMove> ();
+					playerMove.playerDidMove = false;
+
+					enemyCommand = true;
+
+					enemyDelay = 0f;
+				}
+
+				if (randomMove == 5 && player.transform.position.y < enemyMove.y) {
+					enemyMove.y -= 1;
+					enemyDidMove = true;
+					playerMove playerMove = GameObject.Find ("Player").GetComponent<playerMove> ();
+					playerMove.playerDidMove = false;
+
+					enemyCommand = true;
+
+					enemyDelay = 0f;
+				}
+
+				if (randomMove == 5 && player.transform.position.y == enemyMove.y &&
+					player.transform.position.x > enemyMove.x) {
+					enemyMove.x += 1;
+					enemyDidMove = true;
+					playerMove playerMove = GameObject.Find ("Player").GetComponent<playerMove> ();
+					playerMove.playerDidMove = false;
+
+					enemyCommand = true;
+
+					enemyDelay = 0f;
+				}
+
+				if (randomMove == 5 && player.transform.position.y == enemyMove.y &&
+					player.transform.position.x < enemyMove.x) {
+					enemyMove.x -= 1;
 					enemyDidMove = true;
 					playerMove playerMove = GameObject.Find ("Player").GetComponent<playerMove> ();
 					playerMove.playerDidMove = false;

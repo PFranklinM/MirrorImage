@@ -33,7 +33,9 @@ public class enemyCloneMove : MonoBehaviour {
 
 		if (GameObject.Find ("Enemy").GetComponent<enemyMove> ().enemyCommand) {
 
-			randomMove = Random.Range (0, 4);
+//			randomMove = Random.Range (0, 4);
+
+			randomMove = Random.Range (0, 6);
 
 			if (randomMove == 0 && enemyPos.x > 0) {
 				enemyPos.x -= 1;
@@ -49,6 +51,49 @@ public class enemyCloneMove : MonoBehaviour {
 
 			if (randomMove == 3 && enemyPos.y > 0) {
 				enemyPos.y -= 1;
+			}
+
+
+			//Enemy Seek 1
+
+			if (randomMove == 4 && player.transform.position.x > enemyPos.x) {
+				enemyPos.x += 1;
+			}
+
+			if (randomMove == 4 && player.transform.position.x < enemyPos.x) {
+				enemyPos.x -= 1;
+			}
+
+			if (randomMove == 4 && player.transform.position.x == enemyPos.x &&
+				player.transform.position.y > enemyPos.y) {
+				enemyPos.y += 1;
+			}
+
+			if (randomMove == 4 && player.transform.position.x == enemyPos.x &&
+				player.transform.position.y < enemyPos.y) {
+				enemyPos.y -= 1;
+			}
+
+
+
+			//Enemy Seek 2
+
+			if (randomMove == 5 && player.transform.position.y > enemyPos.y) {
+				enemyPos.y += 1;
+			}
+
+			if (randomMove == 5 && player.transform.position.y < enemyPos.y) {
+				enemyPos.y -= 1;
+			}
+
+			if (randomMove == 5 && player.transform.position.y == enemyPos.y &&
+				player.transform.position.x > enemyPos.x) {
+				enemyPos.x += 1;
+			}
+
+			if (randomMove == 5 && player.transform.position.y == enemyPos.y &&
+				player.transform.position.x < enemyPos.x) {
+				enemyPos.x -= 1;
 			}
 
 		}
