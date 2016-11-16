@@ -1,12 +1,8 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/enemyCloneMove.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../New Arcade/Class5/InClass/Assets/Scripts/simpleSerial.cs">
     <Files>
-      <File FileName="Assets/Scripts/enemyMove.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/pelletMove.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/playerMove.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/enemyCloneMove.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/enemyCloneManager.cs" Line="1" Column="1" />
+      <File FileName="../../New Arcade/Class5/InClass/Assets/Scripts/simpleSerial.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

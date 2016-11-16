@@ -8,6 +8,13 @@ public class playerMove : MonoBehaviour {
 
 	public bool playerDidMove = false;
 
+
+	//introduce enemies more slowly
+	//visually work on a world with some sort of narrative
+	//what does it mean to be an object that moves around and an object that follows
+	//make the world a little more alive
+
+
 	// Use this for initialization
 	void Start () {
 	
